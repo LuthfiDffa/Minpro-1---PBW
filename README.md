@@ -33,7 +33,8 @@
 * **Penjelasan Kode**: Layout dibuat menggunakan sistem grid Bootstrap (row, col-lg-6). Progress bar menggunakan komponen progress dari Bootstrap. Data skill ditampilkan menggunakan directive v-for dari Vue.js untuk melakukan looping array skills. Lebar progress bar diatur secara dinamis menggunakan binding :style="{ width: skill.level + '%' }".
   
 ### 4. Certificates
-<img width="1900" height="684" alt="image" src="https://github.com/user-attachments/assets/a5295095-013a-4117-99a5-2e8feb21980f" />
+<img width="1894" height="705" alt="image" src="https://github.com/user-attachments/assets/b00d3479-3fa6-4171-a63e-d7e70185f777" />
+
 
 * **Tampilan**: Section ini menampilkan daftar sertifikat dalam bentuk card dengan layout grid tiga kolom pada layar besar. Setiap card berisi judul sertifikat, penyelenggara, dan tahun.
 * **Penjelasan Kode**: Card dibuat menggunakan komponen card dari Bootstrap 5. Layout grid menggunakan col-md-4 agar menjadi tiga kolom pada layar medium ke atas. Data sertifikat ditampilkan menggunakan Vue.js dengan directive v-for, sehingga setiap objek dalam array certificates otomatis dirender menjadi card baru.
