@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simpang Odah Etam | Pusat Kuliner & Budaya Tenggarong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- navigasi nya -->
+    <header id="main-header">
+        <nav class="container">
+            <a href="#" class="logo">SOE <span>Tenggarong</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><button id="openLoginBtn" class="btn-primary">Login</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Login Member</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="login-icon">👤</div>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="uname">Username</label>
+                        <input type="text" id="uname" placeholder="Masukkan username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="psw">Password</label>
+                        <input type="password" id="psw" placeholder="Masukkan password" required>
+                    </div>
+                    <button type="submit" class="btn-login">Masuk Sekarang</button>
+                    <div class="form-footer">
+                        <label><input type="checkbox" checked> Ingat saya</label>
+                        <a href="#">Lupa password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("loginModal");
+            const openBtn = document.getElementById("openLoginBtn");
+            const closeBtns = document.querySelectorAll(".close-modal");
+            const loginForm = document.getElementById("loginForm");
+            const header = document.getElementById("main-header");
+
+            // Efek header saat scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Untuk buka login
+            openBtn?.addEventListener('click', () => modal.style.display = "flex");
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', () => modal.style.display = "none");
+            });
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) modal.style.display = "none";
+            });
+
+            //Pernyataan Login
+            loginForm?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const uname = document.getElementById("uname").value;
+                const psw = document.getElementById("psw").value;
+
+                if (uname === "lutpi" && psw === "2409116102") {
+                    alert("Anda Sedang Login");
+                    modal.style.display = "none";
+                } else {
+                    alert("Anda Siapa?");
+                }
+            });
+        });
+    </script>
+    <main>
+
+        <!-- home -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Eksplorasi Kuliner Tenggarong</span>
+                    <h1>Selamat Datang di <br><span class="highlight">Simpang Odah Etam</span></h1>
+                    <p>Destinasi pusat jajanan tradisional dan modern yang menjadi ruang interaksi di kota Tenggarong.</p>
+                    <div class="hero-actions">
+                        <a href="#tentang" class="btn-primary large">Jelajahi Sekarang</a>
+                        <a href="https://maps.app.goo.gl/NMjwpiWemXARdcLLA" target="_blank" class="btn-outline">📍 Lihat Lokasi</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="image-wrapper">
+                        <img src="picture/soe 1.jpeg" alt="Simpang Odah Etam">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- tentang -->
+        <section id="tentang" class="about section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Apa itu Simpang Odah Etam?</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-info">
+                        <p>Simpang Odah Etam, yang juga dikenal dengan nama <strong>Jalan Kartanegara</strong>, kini
+                            menjadi pusat jajanan tradisional dan modern yang ramai dikunjungi masyarakat Tenggarong.
+                        </p>
+                        <p>Kehadiran kawasan kuliner ini telah menarik banyak pengunjung, baik dari dalam kota maupun
+                            luar daerah, menjadikannya sebagai destinasi baru yang menggugah selera.</p>
+                        <p>Kawasan ini bukan sekadar tempat makan, melainkan ruang interaksi sosial yang hangat bagi
+                            keluarga dan teman di tengah kota.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Pelaku UMKM</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Pengunjung / Minggu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
